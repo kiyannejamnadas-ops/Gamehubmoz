@@ -33,8 +33,58 @@ h1{
 .menu a:hover{
   color:#00ffff;
 }
-
 .conteudo{
-  margin-left:240px;
+  margin-left:240px; /* já tem para não ficar atrás do menu */
   padding:20px;
+  min-height:100vh;
+}
+
+.comentarios{
+  margin-top:30px;
+  background:#111;
+  padding:15px;
+  border-radius:10px;
+  box-shadow:0 0 15px #0ff;
+  clear: both; /* garante que não fica atrás do menu */
+}
+
+.comentarios h2{
+  color:#0ff;
+}
+
+.comentarios textarea{
+  width:100%;
+  padding:8px;
+  border-radius:5px;
+  border:none;
+  resize:none;
+  margin-bottom:5px;
+  font-family:inherit;
+}
+
+.comentarios button{
+  padding:5px 10px;
+  background:#0ff;
+  border:none;
+  border-radius:5px;
+  cursor:pointer;
+  color:#000;
+}
+
+.comentarios button:hover{
+  background:#0aa;
+}
+
+.comentarios ul{
+  list-style:none;
+  padding:0;
+  margin-top:10px;
+}
+
+.comentarios li{
+  background:#222;
+  padding:8px;
+  border-radius:5px;
+  margin-bottom:5px;
+  word-wrap: break-word;
 }
