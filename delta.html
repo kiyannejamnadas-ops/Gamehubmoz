@@ -1,77 +1,86 @@
 ﻿<!DOCTYPE html>
 <html lang="pt">
 <head>
-<meta charset="UTF-8">
-<title>Delta Force</title>
-<link rel="stylesheet" href="css/style.css">
+  <meta charset="UTF-8">
+  <title>Delta Force | GameHubMoz</title>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #0b0b0b;
+      color: white;
+    }
+
+    /* MENU LATERAL */
+    .menu {
+      position: fixed;
+      left: 0;
+      top: 0;
+      width: 200px;
+      height: 100%;
+      background: #111;
+      padding: 20px;
+    }
+
+    .menu a {
+      display: block;
+      color: cyan;
+      text-decoration: none;
+      margin-bottom: 10px;
+    }
+
+    /* CONTEÚDO */
+    .conteudo {
+      margin-left: 220px;
+      padding: 20px;
+    }
+
+    h1 {
+      color: cyan;
+    }
+  </style>
 </head>
+
 <body>
 
-<div class="menu">
-  <h2>🎮 GameHubMoz</h2>
-  <a href="index.html">Home</a>
-  <a href="delta.html">Delta Force</a>
-  <a href="minecraft.html">Minecraft</a>
-  <a href="soul.html">Soul Knight</a>
-  <a href="roblox.html">Roblox</a>
-  <a href="freefire.html">Free Fire</a>
-  <a href="clash.html">Clash of Clans</a>
-</div>
-
-<div class="conteudo">
-  <h1>🔫 Delta Force</h1>
-  <img src="images/delta.jpg" style="max-width:100%; border-radius:10px;">
-  <ul>
-    <li>Aprende o mapa</li>
-    <li>Usa armas equilibradas</li>
-    <li>Joga em equipa</li>
-  </ul>
-
-  <!-- Comentários -->
-  <div class="comentarios">
-    <h2>💬 Comentários</h2>
-    <textarea id="novoComentario" placeholder="Escreve algo..." rows="3"></textarea>
-    <button id="btnEnviar">Enviar</button>
-    <ul id="listaComentarios"></ul>
+  <!-- MENU -->
+  <div class="menu">
+    <h3>🎮 GameHubMoz</h3>
+    <a href="index.html">Home</a>
+    <a href="delta.html">Delta Force</a>
+    <a href="minecraft.html">Minecraft</a>
   </div>
-</div>
 
-<script>
-const textarea = document.getElementById('novoComentario');
-const btn = document.getElementById('btnEnviar');
-const lista = document.getElementById('listaComentarios');
+  <!-- CONTEÚDO -->
+  <div class="conteudo">
+    <h1>Delta Force Mobile</h1>
+    <p>Dicas, armas e estratégias para Delta Force.</p>
 
-function adicionarComentario() {
-  const texto = textarea.value.trim();
-  if(texto !== ""){
-    const li = document.createElement('li');
-    li.textContent = texto;
-    lista.appendChild(li);
-    textarea.value = "";
-    textarea.focus();
-  }
-}
+    <h2>💬 Comentários</h2>
 
-btn.addEventListener('click', adicionarComentario);
-textarea.addEventListener('keydown', function(e){
-  if(e.key === 'Enter' && !e.shiftKey){
-    e.preventDefault();
-    adicionarComentario();
-  }
-<div id="disqus_thread"></div>
-<script>
-var disqus_config = function () {
-  this.page.url = window.location.href;
-  this.page.identifier = window.location.pathname;
-};
-(function() {
-  var d = document, s = d.createElement('script');
-  s.src = 'https://gamehubmoz.disqus.com/embed.js';
-  s.setAttribute('data-timestamp', +new Date());
-  (d.head || d.body).appendChild(s);
-})();
-</script>
+    <!-- DISQUS -->
+    <div id="disqus_thread"></div>
 
+    <script>
+      var disqus_config = function () {
+        this.page.url = "https://kiyannejamnadas-ops.github.io/Gamehubmoz/delta.html";
+        this.page.identifier = "delta";
+      };
+
+      (function () {
+        var d = document, s = d.createElement('script');
+        s.src = 'https://gamehubmoz.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+      })();
+    </script>
+
+    <noscript>
+      Ativa o JavaScript para ver os comentários.
+    </noscript>
+
+  </div>
 
 </body>
 </html>
