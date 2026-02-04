@@ -1,103 +1,119 @@
 ﻿<!DOCTYPE html>
 <html lang="pt">
 <head>
-  <meta charset="UTF-8">
-  <title>Delta Force | GameHubMoz</title>
+<meta charset="UTF-8">
+<title>Delta Force | GameHubMoz</title>
 
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: #0b0b0b;
-      color: white;
-    }
+<style>
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #0a0f0a;
+  color: #e0ffe0;
+}
 
-    /* MENU LATERAL */
-    .menu {
-      position: fixed;
-      left: 0;
-      top: 0;
-      width: 200px;
-      height: 100%;
-      background: #111;
-      padding: 20px;
-    }
+/* MENU */
+.menu {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 200px;
+  height: 100%;
+  background: #081008;
+  padding: 20px;
+}
 
-    .menu h3 {
-      color: cyan;
-    }
+.menu h3 {
+  color: #00ff88;
+}
 
-    .menu a {
-      display: block;
-      color: cyan;
-      text-decoration: none;
-      margin-bottom: 10px;
-    }
+.menu a {
+  display: block;
+  color: #00ff88;
+  text-decoration: none;
+  margin-bottom: 10px;
+}
 
-    /* CONTEÚDO */
-    .conteudo {
-      margin-left: 220px;
-      padding: 20px;
-    }
+/* HERO (IMAGEM DE FUNDO) */
+.hero {
+  margin-left: 200px;
+  height: 300px;
+  background-image: 
+    linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.9)),
+    url("images/delta.jpg");
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  padding: 20px;
+}
 
-    h1, h2 {
-      color: cyan;
-    }
+.hero h1 {
+  color: #00ff88;
+  font-size: 40px;
+}
 
-    img {
-      width: 100%;
-      max-width: 800px;
-      border-radius: 8px;
-      margin-bottom: 20px;
-    }
-  </style>
+/* CONTEÚDO */
+.conteudo {
+  margin-left: 200px;
+  padding: 20px;
+}
+
+h2 {
+  color: #00ff88;
+}
+
+/* DISQUS */
+#disqus_thread {
+  background: #050805;
+  padding: 15px;
+  border-radius: 8px;
+}
+</style>
 </head>
 
 <body>
 
-  <!-- MENU -->
-  <div class="menu">
-    <h3>🎮 GameHubMoz</h3>
-    <a href="index.html">Home</a>
-    <a href="delta.html">Delta Force</a>
-    <a href="minecraft.html">Minecraft</a>
-    <a href="freefire.html">Free Fire</a>
-    <a href="clashofclans.html">Clash of Clans</a>
-  </div>
+<!-- MENU -->
+<div class="menu">
+  <h3>🎮 GameHubMoz</h3>
+  <a href="index.html">Home</a>
+  <a href="delta.html">Delta Force</a>
+  <a href="minecraft.html">Minecraft</a>
+  <a href="freefire.html">Free Fire</a>
+  <a href="clashofclans.html">Clash of Clans</a>
+</div>
 
-  <!-- CONTEÚDO -->
-  <div class="conteudo">
-    <h1>Delta Force Mobile</h1>
+<!-- IMAGEM DE FUNDO -->
+<div class="hero">
+  <h1>Delta Force Mobile</h1>
+</div>
 
-    <!-- IMAGEM -->
-    <img src="images/delta.jpg" alt="Delta Force Mobile">
+<!-- CONTEÚDO -->
+<div class="conteudo">
+  <p>
+    Dicas, armas e estratégias para dominar no Delta Force Mobile.
+  </p>
 
-    <p>Dicas, armas e estratégias para dominar no Delta Force Mobile.</p>
+  <h2>💬 Comentários</h2>
 
-    <h2>💬 Comentários</h2>
+  <div id="disqus_thread"></div>
 
-    <!-- DISQUS -->
-    <div id="disqus_thread"></div>
+  <script>
+    var disqus_config = function () {
+      this.page.url = "https://kiyannejamnadas-ops.github.io/Gamehubmoz/delta.html";
+      this.page.identifier = "delta";
+    };
 
-    <script>
-      var disqus_config = function () {
-        this.page.url = "https://kiyannejamnadas-ops.github.io/Gamehubmoz/delta.html";
-        this.page.identifier = "delta";
-      };
+    (function () {
+      var d = document, s = d.createElement('script');
+      s.src = 'https://gamehubmoz.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  </script>
 
-      (function () {
-        var d = document, s = d.createElement('script');
-        s.src = 'https://gamehubmoz.disqus.com/embed.js';
-        s.setAttribute('data-timestamp', +new Date());
-        (d.head || d.body).appendChild(s);
-      })();
-    </script>
-
-    <noscript>
-      Ativa o JavaScript para ver os comentários.
-    </noscript>
-
-  </div>
+</div>
 
 </body>
 </html>
