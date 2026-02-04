@@ -1,29 +1,218 @@
 ﻿<!DOCTYPE html>
-<html>
+<html lang="pt">
 <head>
-  <meta charset="UTF-8">
-  <title>GameHubMoz</title>
-  <link rel="stylesheet" href="css/style.css">
+<meta charset="UTF-8">
+<title>GameHubMoz | Home</title>
+
+<style>
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #060606;
+  color: #ffffff;
+}
+
+/* BOTÃO MENU */
+.toggle-btn {
+  position: fixed;
+  top: 12px;
+  left: 12px;
+  font-size: 26px;
+  background: #00ffff;
+  color: #000;
+  border: none;
+  padding: 8px 12px;
+  cursor: pointer;
+  z-index: 1001;
+  animation: ledRGB 6s infinite;
+}
+
+/* MENU */
+.menu {
+  position: fixed;
+  top: 0;
+  left: -220px;
+  width: 200px;
+  height: 100%;
+  background: #0d0d0d;
+  padding: 20px;
+  transition: 0.3s;
+  z-index: 1000;
+}
+
+.menu.active { left: 0; }
+
+.menu h3 {
+  animation: ledRGB 6s infinite;
+}
+
+.menu a {
+  display: block;
+  color: #ffffff;
+  text-decoration: none;
+  margin-bottom: 12px;
+}
+
+/* HERO */
+.hero {
+  height: 280px;
+  background:
+    linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.9)),
+    url("images/home.jpg");
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero h1 {
+  font-size: 42px;
+  animation: ledRGB 6s infinite;
+}
+
+/* 🎨 LED RGB (2s cada cor) */
+@keyframes ledRGB {
+  0% {
+    color: #00ffff;
+    text-shadow: 0 0 10px #00ffff;
+  }
+  33% {
+    color: #9b00ff;
+    text-shadow: 0 0 10px #9b00ff;
+  }
+  66% {
+    color: #00ff88;
+    text-shadow: 0 0 10px #00ff88;
+  }
+  100% {
+    color: #00ffff;
+    text-shadow: 0 0 10px #00ffff;
+  }
+}
+
+/* CONTEÚDO */
+.conteudo {
+  padding: 20px;
+}
+
+h2 {
+  animation: ledRGB 6s infinite;
+}
+
+/* GRID */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+/* CARD */
+.card {
+  background: #111;
+  border-radius: 10px;
+  overflow: hidden;
+  transition: transform 0.3s;
+}
+
+.card:hover {
+  transform: scale(1.05);
+}
+
+.card img {
+  width: 100%;
+  height: 140px;
+  object-fit: cover;
+}
+
+.card h3 {
+  padding: 10px;
+  animation: ledRGB 6s infinite;
+}
+
+.card p {
+  padding: 0 10px 10px;
+}
+
+.card a {
+  display: block;
+  text-align: center;
+  padding: 10px;
+  background: #ffffff;
+  color: #000;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+/* MOBILE */
+@media (max-width: 600px) {
+  .hero h1 {
+    font-size: 28px;
+  }
+}
+</style>
 </head>
+
 <body>
 
-<div class="menu">
-  <h2>🎮 GameHubMoz</h2>
-<a href="index.html">Home</a>
-<a href="delta.html">Delta Force</a>
-<a href="minecraft.html">Minecraft</a>
-<a href="soul.html">Soul Knight</a>
-<a href="roblox.html">Roblox</a>
-<a href="freefire.html">Free Fire</a>
-<a href="clash.html">Clash of Clans</a>
+<button class="toggle-btn" onclick="toggleMenu()">☰</button>
 
+<div class="menu" id="menu">
+  <h3>🎮 GameHubMoz</h3>
+  <a href="index.html">Home</a>
+  <a href="delta.html">Delta Force</a>
+  <a href="minecraft.html">Minecraft</a>
+  <a href="freefire.html">Free Fire</a>
+  <a href="clashofclans.html">Clash of Clans</a>
+</div>
+
+<div class="hero">
+  <h1>GameHubMoz</h1>
 </div>
 
 <div class="conteudo">
-  <h1>Bem-vindo 👾</h1>
-  <p>Escolhe um jogo no menu.</p>
+  <h2>Dicas de Jogos Mobile</h2>
+
+  <div class="grid">
+
+    <div class="card">
+      <img src="images/delta.jpg">
+      <h3>Delta Force</h3>
+      <p>Armas e estratégias</p>
+      <a href="delta.html">Entrar</a>
+    </div>
+
+    <div class="card">
+      <img src="images/minecraft.jpg">
+      <h3>Minecraft</h3>
+      <p>Sobrevivência e seeds</p>
+      <a href="minecraft.html">Entrar</a>
+    </div>
+
+    <div class="card">
+      <img src="images/freefire.jpg">
+      <h3>Free Fire</h3>
+      <p>Rush e sensibilidade</p>
+      <a href="freefire.html">Entrar</a>
+    </div>
+
+    <div class="card">
+      <img src="images/clash.jpg">
+      <h3>Clash of Clans</h3>
+      <p>Ataques e layouts</p>
+      <a href="clashofclans.html">Entrar</a>
+    </div>
+
+  </div>
 </div>
 
+<script>
+function toggleMenu() {
+  document.getElementById("menu").classList.toggle("active");
+}
+</script>
 
 </body>
 </html>

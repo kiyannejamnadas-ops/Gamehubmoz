@@ -5,41 +5,62 @@
 <title>Delta Force | GameHubMoz</title>
 
 <style>
+* { box-sizing: border-box; }
+
 body {
   margin: 0;
   font-family: Arial, sans-serif;
-  background: #0a0f0a;
-  color: #e0ffe0;
+  background: #050805;
+  color: #eaffea;
+}
+
+/* BOTÃO MENU */
+.toggle-btn {
+  position: fixed;
+  top: 12px;
+  left: 12px;
+  font-size: 26px;
+  background: #1aff7a;
+  color: #000;
+  border: none;
+  padding: 8px 12px;
+  cursor: pointer;
+  z-index: 1001;
+  box-shadow: 0 0 8px #1aff7a;
 }
 
 /* MENU */
 .menu {
   position: fixed;
-  left: 0;
   top: 0;
+  left: -220px;
   width: 200px;
   height: 100%;
   background: #081008;
   padding: 20px;
+  transition: 0.3s;
+  z-index: 1000;
 }
 
+.menu.active { left: 0; }
+
 .menu h3 {
-  color: #00ff88;
+  color: #1aff7a;
+  animation: ledGreen 6s infinite alternate;
 }
 
 .menu a {
   display: block;
-  color: #00ff88;
+  color: #1aff7a;
   text-decoration: none;
-  margin-bottom: 10px;
+  margin-bottom: 12px;
 }
 
-/* HERO (IMAGEM DE FUNDO) */
+/* HERO */
 .hero {
-  margin-left: 200px;
-  height: 300px;
-  background-image: 
-    linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.9)),
+  height: 280px;
+  background:
+    linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.9)),
     url("images/delta.jpg");
   background-size: cover;
   background-position: center;
@@ -49,33 +70,58 @@ body {
 }
 
 .hero h1 {
-  color: #00ff88;
-  font-size: 40px;
+  font-size: 42px;
+  color: #1aff7a;
+  animation: ledGreen 6s infinite alternate;
+}
+
+/* 🌿 LED GLOW VERDE (SUAVE) */
+@keyframes ledGreen {
+  0% {
+    text-shadow: 0 0 6px #1aff7a;
+  }
+  50% {
+    text-shadow: 0 0 10px #00ff88;
+  }
+  100% {
+    text-shadow: 0 0 6px #00cc66;
+  }
 }
 
 /* CONTEÚDO */
 .conteudo {
-  margin-left: 200px;
   padding: 20px;
 }
 
 h2 {
-  color: #00ff88;
+  color: #1aff7a;
+  animation: ledGreen 6s infinite alternate;
 }
 
 /* DISQUS */
 #disqus_thread {
-  background: #050805;
+  background: #020402;
   padding: 15px;
   border-radius: 8px;
+}
+
+/* MOBILE */
+@media (max-width: 600px) {
+  .hero {
+    height: 200px;
+  }
+  .hero h1 {
+    font-size: 28px;
+  }
 }
 </style>
 </head>
 
 <body>
 
-<!-- MENU -->
-<div class="menu">
+<button class="toggle-btn" onclick="toggleMenu()">☰</button>
+
+<div class="menu" id="menu">
   <h3>🎮 GameHubMoz</h3>
   <a href="index.html">Home</a>
   <a href="delta.html">Delta Force</a>
@@ -84,22 +130,22 @@ h2 {
   <a href="clashofclans.html">Clash of Clans</a>
 </div>
 
-<!-- IMAGEM DE FUNDO -->
 <div class="hero">
   <h1>Delta Force Mobile</h1>
 </div>
 
-<!-- CONTEÚDO -->
 <div class="conteudo">
-  <p>
-    Dicas, armas e estratégias para dominar no Delta Force Mobile.
-  </p>
+  <p>Dicas, armas e estratégias para dominar no Delta Force Mobile.</p>
 
   <h2>💬 Comentários</h2>
 
   <div id="disqus_thread"></div>
 
   <script>
+    function toggleMenu() {
+      document.getElementById("menu").classList.toggle("active");
+    }
+
     var disqus_config = function () {
       this.page.url = "https://kiyannejamnadas-ops.github.io/Gamehubmoz/delta.html";
       this.page.identifier = "delta";
@@ -112,7 +158,6 @@ h2 {
       (d.head || d.body).appendChild(s);
     })();
   </script>
-
 </div>
 
 </body>
